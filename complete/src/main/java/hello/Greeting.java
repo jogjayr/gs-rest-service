@@ -1,9 +1,14 @@
 package hello;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Greeting {
 
     private final long id;
     private final String content;
+
+    @Value("spring.application.name")
+    String appName;
 
     public Greeting(long id, String content) {
         this.id = id;
@@ -15,6 +20,6 @@ public class Greeting {
     }
 
     public String getContent() {
-        return content;
+        return appName;
     }
 }
